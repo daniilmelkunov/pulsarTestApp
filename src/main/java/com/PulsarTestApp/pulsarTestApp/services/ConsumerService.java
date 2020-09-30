@@ -5,5 +5,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface ConsumerService {
-    void buildConsumer(String service_url, String topic_name) throws PulsarClientException;
+    void buildConsumer(String service_url, String topic_name, String subscriptionName) throws PulsarClientException;
 }

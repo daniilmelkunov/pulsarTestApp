@@ -17,14 +17,14 @@ public class configuration {
     private ConsumerService consumerService;
 
     private static final String SERVICE__URL = "pulsar://localhost:6650";
-    private static final String TOPIC__NAME = "test-topic";
+    private static final String TOPIC__NAME = "test-topic534345345";
 
     @EventListener(ApplicationReadyEvent.class)
     public void doSomethingAfterStartup() throws Exception {
         producerService.buildProducer(SERVICE__URL, TOPIC__NAME);
-        producerService.sendTestMessage();
-        consumerService.buildConsumer(SERVICE__URL, TOPIC__NAME);
-
+        consumerService.buildConsumer(SERVICE__URL, TOPIC__NAME, "sub1");
+        consumerService.buildConsumer(SERVICE__URL, TOPIC__NAME, "sub2");
+        consumerService.buildConsumer(SERVICE__URL, TOPIC__NAME, "sub3");
     }
 
 }
